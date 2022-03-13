@@ -13,12 +13,18 @@ namespace Toys
 
         public void decAccelerate()
         {
-            m_accelerate--;
+            if (m_accelerate > 0)
+            {
+                m_accelerate--;
+            }
         }
 
         public void decRise()
         {
-            m_rise--;
+            if (m_rise > 0)
+            {
+                m_rise--;
+            }
         }
 
         public void incAccelerate()

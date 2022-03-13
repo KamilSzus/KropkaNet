@@ -111,6 +111,7 @@ namespace Toys
             // 
             this.textBoxAccelerate.Location = new System.Drawing.Point(126, 58);
             this.textBoxAccelerate.Name = "textBoxAccelerate";
+            this.textBoxAccelerate.ReadOnly = true;
             this.textBoxAccelerate.Size = new System.Drawing.Size(100, 22);
             this.textBoxAccelerate.TabIndex = 5;
             // 
@@ -150,6 +151,7 @@ namespace Toys
             // 
             this.textBoxDive.Location = new System.Drawing.Point(126, 58);
             this.textBoxDive.Name = "textBoxDive";
+            this.textBoxDive.ReadOnly = true;
             this.textBoxDive.Size = new System.Drawing.Size(100, 22);
             this.textBoxDive.TabIndex = 5;
             // 
@@ -189,6 +191,7 @@ namespace Toys
             // 
             this.textBoxRise.Location = new System.Drawing.Point(126, 58);
             this.textBoxRise.Name = "textBoxRise";
+            this.textBoxRise.ReadOnly = true;
             this.textBoxRise.Size = new System.Drawing.Size(100, 22);
             this.textBoxRise.TabIndex = 5;
             // 
