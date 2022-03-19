@@ -8,6 +8,12 @@ namespace Toys
 {
     class Car:IAccelerate
     {
+        static int carId = 0;
+
+        public Car()
+        {
+            carId++;
+        }
         public int m_accelerate { get; set; }
 
         public void decAccelerate()
@@ -24,7 +30,7 @@ namespace Toys
         }
         public override string ToString()
         {
-            return "Car";
+            return "Car "+ carId;
         }
     }
 }

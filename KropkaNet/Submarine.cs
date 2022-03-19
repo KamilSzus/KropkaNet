@@ -8,6 +8,12 @@ namespace Toys
 {
     class Submarine : IDive, IAccelerate
     {
+        static int subnarineId = 0;
+
+        public Submarine()
+        {
+            subnarineId++;
+        }
         public int m_accelerate { get; set; }
         public int m_dive { get; set; }
 
@@ -38,7 +44,7 @@ namespace Toys
         }
         public override string ToString()
         {
-            return "Submarine";
+            return "Submarine " + subnarineId;
         }
     }
 }

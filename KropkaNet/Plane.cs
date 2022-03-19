@@ -8,8 +8,14 @@ namespace Toys
 {
     class Plane : IRise, IAccelerate
     {
+        static int planId = 0;
         public int m_accelerate { get; set; }
         public int m_rise { get; set; }
+
+        public Plane()
+        {
+            planId++;
+        }
 
         public void decAccelerate()
         {
@@ -39,7 +45,7 @@ namespace Toys
 
         public override string ToString()
         {
-            return "Plane";
+            return "Plane "+planId;
         }
     }
 }
