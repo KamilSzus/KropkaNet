@@ -9,38 +9,40 @@ namespace Toys
     class Plane : IRise, IAccelerate
     {
         static int planId = 0;
-        public int m_accelerate { get; set; }
-        public int m_rise { get; set; }
+        private int m_accelerate;
+        private int m_rise;
+        public int Accelerate
+        {
+            get
+            {
+                return m_accelerate;
+            }
+            set
+            {
+                if (value >= 0)
+                {
+                    m_accelerate = value;
+                }
+            }
+        }
+        public int Rise
+        {
+            get
+            {
+                return m_rise;
+            }
+            set
+            {
+                if (value >= 0)
+                {
+                    m_rise = value;
+                }
+            }
+        }
 
         public Plane()
         {
             planId++;
-        }
-
-        public void decAccelerate()
-        {
-            if (m_accelerate > 0)
-            {
-                m_accelerate--;
-            }
-        }
-
-        public void decRise()
-        {
-            if (m_rise > 0)
-            {
-                m_rise--;
-            }
-        }
-
-        public void incAccelerate()
-        {
-            m_accelerate++;
-        }
-
-        public void incRise()
-        {
-            m_rise++;
         }
 
         public override string ToString()

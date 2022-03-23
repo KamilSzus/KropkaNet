@@ -9,38 +9,41 @@ namespace Toys
     class Submarine : IDive, IAccelerate
     {
         static int subnarineId = 0;
+        private int m_accelerate;
+        private int m_dive;
 
         public Submarine()
         {
             subnarineId++;
         }
-        public int m_accelerate { get; set; }
-        public int m_dive { get; set; }
-
-        public void decAccelerate()
+        public int Accelerate 
         {
-            if (m_accelerate > 0)
+            get
             {
-                m_accelerate--;
+                return m_accelerate;
             }
-        }
-
-        public void decDive()
-        {
-            if (m_dive>0)
+            set
             {
-                m_dive--;
+                if (value >= 0)
+                {
+                    m_accelerate = value;
+                }
+            } 
+        }
+
+        public int Dive
+        {
+            get
+            {
+                return m_dive;
             }
-        }
-
-        public void incAccelerate()
-        {
-            m_accelerate++;
-        }
-
-        public void incDive()
-        {
-            m_dive++;
+            set
+            {
+                if (value >= 0)
+                {
+                    m_dive = value;
+                }
+            }
         }
         public override string ToString()
         {

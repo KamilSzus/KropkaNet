@@ -8,9 +8,6 @@ namespace Toys
 {
     interface IRise
     {
-        void incRise();
-        void decRise();
-        int m_rise {get;set;}
-
+        int Rise {get;set;}
     }
 }

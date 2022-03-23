@@ -61,59 +61,77 @@ namespace Toys
             if (listOfCreatedToy.SelectedItem is IRise)
             {
                 Rise.Visible = true;
-                textBoxRise.Text = Convert.ToString(((IRise)listOfCreatedToy.SelectedItem).m_rise);
+                textBoxRise.Text = Convert.ToString(((IRise)listOfCreatedToy.SelectedItem).Rise);
             }
             if (listOfCreatedToy.SelectedItem is IDive)
             {
                 Dive.Visible = true;
-                textBoxDive.Text = Convert.ToString(((IDive)listOfCreatedToy.SelectedItem).m_dive);
+                textBoxDive.Text = Convert.ToString(((IDive)listOfCreatedToy.SelectedItem).Dive);
             }
             if (listOfCreatedToy.SelectedItem is IAccelerate)
             {
                 Accelerate.Visible = true;
-                textBoxAccelerate.Text = Convert.ToString(((IAccelerate)listOfCreatedToy.SelectedItem).m_accelerate);
+                textBoxAccelerate.Text = Convert.ToString(((IAccelerate)listOfCreatedToy.SelectedItem).Accelerate);
             }
         }
 
         private void AccelerateIncrease_Click(object sender, EventArgs e)
         {
             IAccelerate accelerate = (IAccelerate)listOfCreatedToy.SelectedItem;
-            accelerate.incAccelerate();
-            textBoxAccelerate.Text = Convert.ToString(accelerate.m_accelerate);
+            if (accelerate != null)
+            {
+                accelerate.Accelerate++;// incAccelerate();
+                textBoxAccelerate.Text = Convert.ToString(accelerate.Accelerate);
+            }
         }
 
         private void accelerateDecrease_Click(object sender, EventArgs e)
         {
             IAccelerate accelerate = (IAccelerate)listOfCreatedToy.SelectedItem;
-            accelerate.decAccelerate();
-            textBoxAccelerate.Text = Convert.ToString(accelerate.m_accelerate);
+            if (accelerate != null)
+            {
+                accelerate.Accelerate--;
+                textBoxAccelerate.Text = Convert.ToString(accelerate.Accelerate);
+            }
         }
 
         private void diveDecrease_Click(object sender, EventArgs e)
         {
             IDive dive = (IDive)listOfCreatedToy.SelectedItem;
-            dive.decDive();
-            textBoxDive.Text = Convert.ToString(dive.m_dive);
+            if (dive != null)
+            {
+                dive.Dive--;
+                textBoxDive.Text = Convert.ToString(dive.Dive);
+            }
         }
         private void diveIncrease_Click(object sender, EventArgs e)
         {
             IDive dive = (IDive)listOfCreatedToy.SelectedItem;
-            dive.incDive();
-            textBoxDive.Text = Convert.ToString(dive.m_dive);
+            if (dive != null)
+            {
+                dive.Dive++;
+                textBoxDive.Text = Convert.ToString(dive.Dive);
+            }
         }
 
         private void riseDecrease_Click(object sender, EventArgs e)
         {
             IRise rise = (IRise)listOfCreatedToy.SelectedItem;
-            rise.decRise();
-            textBoxRise.Text = Convert.ToString(rise.m_rise);
+            if (rise != null)
+            {
+                rise.Rise--;
+                textBoxRise.Text = Convert.ToString(rise.Rise);
+            }
         }
 
         private void riseIncrease_Click(object sender, EventArgs e)
         {
             IRise rise = (IRise)listOfCreatedToy.SelectedItem;
-            rise.incRise();
-            textBoxRise.Text = Convert.ToString(rise.m_rise);
+            if (rise != null)
+            {
+                rise.Rise++;
+                textBoxRise.Text = Convert.ToString(rise.Rise);
+            }
         }
     }
 }

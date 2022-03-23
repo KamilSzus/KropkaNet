@@ -8,8 +8,6 @@ namespace Toys
 {
     interface IAccelerate
     {
-        void incAccelerate();
-        void decAccelerate();
-        int m_accelerate{ get; set; }
+        int Accelerate{ get; set; }
     }
 }

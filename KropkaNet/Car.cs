@@ -9,25 +9,27 @@ namespace Toys
     class Car:IAccelerate
     {
         static int carId = 0;
+        private int m_accelerate;
 
         public Car()
         {
             carId++;
         }
-        public int m_accelerate { get; set; }
-
-        public void decAccelerate()
+        public int Accelerate
         {
-            if (m_accelerate > 0)
+            get
             {
-                m_accelerate--;
+                return m_accelerate;
+            }
+            set
+            {
+                if (value >= 0)
+                {
+                    m_accelerate = value;
+                }
             }
         }
 
-        public void incAccelerate()
-        {
-            m_accelerate++;
-        }
         public override string ToString()
         {
             return "Car "+ carId;

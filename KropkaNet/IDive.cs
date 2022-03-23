@@ -8,8 +8,6 @@ namespace Toys
 {
     interface IDive
     {
-        void incDive();
-        void decDive();
-        int m_dive { get; set; }
+        int Dive { get; set; }
     }
 }
