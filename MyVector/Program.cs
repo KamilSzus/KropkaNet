@@ -10,7 +10,7 @@ namespace MyVector
     {
         static void Main(string[] args)
         {
-            MyVector vector = new MyVector(5);
+            MyVector<int> vector = new MyVector<int>(5);
             int cappacity=vector.m_cappacity;
         }
     }

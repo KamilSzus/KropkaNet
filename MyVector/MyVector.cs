@@ -29,8 +29,18 @@ namespace MyVector
         }
         public Type this[int index]
         {
-            get => m_myVector[index];
-            set => m_myVector[index] = value;
+            get
+            {
+                if (index >= m_cappacity || index <= -1 )
+                {
+                    throw new IndexOutOfRangeException("Wartosc o podanym indeksie jest nieosiagaln");
+                }
+               return m_myVector[index];
+            }
+            set 
+            { 
+                m_myVector[index] = value; 
+            }
         }
 
         public MyVector(int cappacityOfNewVector)

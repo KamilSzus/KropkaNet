@@ -30,7 +30,7 @@ namespace MyVector
             vector.pushBack(2);
             vector.pushBack(3);
 
-            Assert.AreEqual(expectedValue[3], vector[3]);
+            Assert.AreEqual(expectedValue[2], vector[2]);
         }
 
         [Test,TestCase(new int[] { 1, 2, 3, 4, 5 }, 6)]
@@ -46,6 +46,15 @@ namespace MyVector
 
             Assert.AreEqual(expectedNewCappacity, vector.m_cappacity);
             Assert.That(vector[4], Is.EqualTo(shouldContainsAtLeast[4]));
+        }
+
+        [Test]
+        public void whenCallIndexingOutOfArrayShouldThrowException()
+        {
+            MyVector<int> vector = new MyVector<int>(3);
+            Assert.That(() => vector[6],
+            Throws.Exception
+              .TypeOf<IndexOutOfRangeException>());
         }
     }
 }
