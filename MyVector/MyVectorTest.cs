@@ -15,7 +15,7 @@ namespace MyVector
             int expectedCappacity = 5;
             int expectedSize = 0;
 
-            MyVector vector = new MyVector(expectedCappacity);
+            MyVector<int> vector = new MyVector<int>(expectedCappacity);
 
             Assert.AreEqual(expectedCappacity, vector.m_cappacity);
             Assert.AreEqual(expectedSize, vector.m_size);
@@ -24,19 +24,19 @@ namespace MyVector
         [Test,TestCase(new int[] { 1, 2, 3 })]
         public void whenAddingElementToEndOFVectorShouldContainsThisElement(int[] expectedValue)
         {
-            MyVector vector = new MyVector(3);
+            MyVector<int> vector = new MyVector<int>(3);
 
             vector.pushBack(1);
             vector.pushBack(2);
             vector.pushBack(3);
 
-            Assert.AreEqual(expectedValue, vector.m_myVector);
+            Assert.AreEqual(expectedValue[3], vector[3]);
         }
 
         [Test,TestCase(new int[] { 1, 2, 3, 4, 5 }, 6)]
         public void whenAddingElementToFullVectorCappacityShouldBeIncrease(int[] shouldContainsAtLeast , int expectedNewCappacity)
         {
-            MyVector vector = new MyVector(3);
+            MyVector<int> vector = new MyVector<int>(3);
 
             vector.pushBack(1);
             vector.pushBack(2);
@@ -44,8 +44,8 @@ namespace MyVector
             vector.pushBack(4);
             vector.pushBack(5);
 
-            Assert.That(shouldContainsAtLeast, Is.SubsetOf(vector.m_myVector));
             Assert.AreEqual(expectedNewCappacity, vector.m_cappacity);
+            Assert.That(vector[4], Is.EqualTo(shouldContainsAtLeast[4]));
         }
     }
 }

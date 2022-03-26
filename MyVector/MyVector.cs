@@ -14,8 +14,9 @@ using System.Threading.Tasks;
 
 namespace MyVector
 {
-    class MyVector
+    class MyVector<Type>
     {
+        private Type[] m_myVector;
         public int m_cappacity
         {
             get;
@@ -26,20 +27,20 @@ namespace MyVector
             get;
             private set;
         }
-        public int[] m_myVector
+        public Type this[int index]
         {
-            get;
-            private set;
+            get => m_myVector[index];
+            set => m_myVector[index] = value;
         }
 
         public MyVector(int cappacityOfNewVector)
         {
-            m_myVector = new int[cappacityOfNewVector];
+            m_myVector = new Type[cappacityOfNewVector];
             m_size = 0;
             m_cappacity = cappacityOfNewVector;
         }
 
-        public void pushBack(int value)
+        public void pushBack(Type value)
         {
             if (m_size == m_cappacity)
             {
@@ -51,11 +52,12 @@ namespace MyVector
 
         private void allocate(int newCappacity)
         {
-            int[] newMyVector = new int[newCappacity];
+            Type[] newMyVector = new Type[newCappacity];
             Array.Copy(m_myVector, newMyVector, m_size);
 
             m_cappacity = newCappacity;
             m_myVector = newMyVector;
         }
+           
     }
 }
