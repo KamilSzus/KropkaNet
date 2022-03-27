@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 /*
     Tablica może być np. tablicą obiektów typu int bądź referencji do typu Object.
@@ -39,7 +35,17 @@ namespace MyVector
             }
             set 
             { 
-                m_myVector[index] = value; 
+                if(index <= -1)
+                {
+                    throw new IndexOutOfRangeException("Wartosc o podanym indeksie jest nieosiagaln");
+                }
+                if(index >= m_cappacity)
+                {
+                    allocate(index + 1);
+                }
+
+                m_myVector[index] = value;
+                m_size++;
             }
         }
 
@@ -68,6 +74,5 @@ namespace MyVector
             m_cappacity = newCappacity;
             m_myVector = newMyVector;
         }
-           
     }
 }

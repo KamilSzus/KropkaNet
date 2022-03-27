@@ -49,5 +49,22 @@ namespace MyVector
             Throws.Exception
               .TypeOf<IndexOutOfRangeException>());
         }
+
+        [Test,TestCase(5)]
+        public void whenAddingElementOutOfArrayByIndexingCappacityShouldBeIncrease(int expectedNewCappacity)
+        {
+            vector[4] = 4;
+
+            Assert.AreEqual(4, vector[4]);
+            Assert.AreEqual(expectedNewCappacity, vector.m_cappacity);
+        }
+
+        [Test]
+        public void whenCallIndexingWithMinusValueShouldThrowException()
+        {
+            Assert.That(() => vector[-1],
+            Throws.Exception
+              .TypeOf<IndexOutOfRangeException>());
+        }
     }
 }

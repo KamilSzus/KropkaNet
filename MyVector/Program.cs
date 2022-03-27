@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyVector
 {
@@ -10,8 +6,18 @@ namespace MyVector
     {
         static void Main(string[] args)
         {
-            MyVector<int> vector = new MyVector<int>(5);
-            int cappacity=vector.m_cappacity;
+            MyVector<string> vector = new MyVector<string>(2);
+            vector[0] = "Hello";
+            Console.WriteLine(vector[0]);
+            vector.pushBack("Word");
+            Console.WriteLine(vector[1]);
+            vector[1]="Hello";
+            Console.WriteLine(vector[1]);
+            for(int i = 0; i < vector.m_size-1; i++)
+            {
+                Console.WriteLine(vector[i]);
+            }
+            Console.ReadKey();
         }
     }
 }
