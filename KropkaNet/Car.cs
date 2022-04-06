@@ -10,10 +10,12 @@ namespace Toys
     {
         static int carId = 0;
         private int m_accelerate;
+        private String name;
 
         public Car()
         {
             carId++;
+            name = "Car " + carId;
         }
         public int Accelerate
         {
@@ -32,7 +34,7 @@ namespace Toys
 
         public override string ToString()
         {
-            return "Car "+ carId;
+            return name;
         }
     }
 }

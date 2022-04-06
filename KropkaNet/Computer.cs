@@ -9,14 +9,16 @@ namespace Toys
     class Computer
     {
         static int computerId = 0;
+        private String name;
 
         public Computer()
         {
             computerId++;
+            name = "Computer " + computerId;
         }
         public override string ToString()
         {
-            return "Computer " + computerId;
+            return name;
         }
     }
 }

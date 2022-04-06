@@ -13,7 +13,7 @@ namespace MyVector
             Console.WriteLine(vector[1]);
             vector[1]="Hello";
             Console.WriteLine(vector[1]);
-            for(int i = 0; i < vector.m_size-1; i++)
+            for(int i = 0; i < 6; i++)
             {
                 Console.WriteLine(vector[i]);
             }

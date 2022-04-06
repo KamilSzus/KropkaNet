@@ -1,5 +1,4 @@
 ﻿using System;
-
 /*
     Tablica może być np. tablicą obiektów typu int bądź referencji do typu Object.
     Tablica ma posiadać indeksator do zapisu/odczytu oraz metodę Add do dopisywania elementów na końcu
@@ -13,23 +12,14 @@ namespace MyVector
     class MyVector<Type>
     {
         private Type[] m_myVector;
-        public int m_cappacity
-        {
-            get;
-            private set;
-        }
-        public int m_size //pokazuje pierwszy wolny element
-        {
-            get;
-            private set;
-        }
+        //m_myVector.Length() ilosc zaalokowanej pamieci
         public Type this[int index]
         {
             get
             {
-                if (index >= m_cappacity || index <= -1 )
+                if (index >= m_myVector.Length || index <= -1 )
                 {
-                    throw new IndexOutOfRangeException("Wartosc o podanym indeksie jest nieosiagaln");
+                    throw new IndexOutOfRangeException("Wartosc o podanym indeksie jest nieosiagalna");
                 }
                return m_myVector[index];
             }
@@ -37,42 +27,34 @@ namespace MyVector
             { 
                 if(index <= -1)
                 {
-                    throw new IndexOutOfRangeException("Wartosc o podanym indeksie jest nieosiagaln");
+                    throw new IndexOutOfRangeException("Wartosc o podanym indeksie jest nieosiagalny");
                 }
-                if(index >= m_cappacity)
+                if(index >= m_myVector.Length)
                 {
-                    allocate(index + 1);
+                    if (index == 0)
+                    {
+                        allocate(1 * 2);
+                    }
+                    allocate(index * 2);
                 }
 
                 m_myVector[index] = value;
-                m_size++;
             }
         }
 
         public MyVector(int cappacityOfNewVector)
         {
             m_myVector = new Type[cappacityOfNewVector];
-            m_size = 0;
-            m_cappacity = cappacityOfNewVector;
         }
 
         public void pushBack(Type value)
         {
-            if (m_size == m_cappacity)
-            {
-                allocate((2 * m_cappacity));
-            }
-            m_myVector[m_size] = value;
-            m_size++;
+            this[m_myVector.Length] = value;
         }
 
         private void allocate(int newCappacity)
         {
-            Type[] newMyVector = new Type[newCappacity];
-            Array.Copy(m_myVector, newMyVector, m_size);
-
-            m_cappacity = newCappacity;
-            m_myVector = newMyVector;
+            Array.Resize(ref m_myVector, newCappacity);
         }
     }
 }

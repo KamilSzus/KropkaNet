@@ -11,10 +11,12 @@ namespace Toys
         static int subnarineId = 0;
         private int m_accelerate;
         private int m_dive;
+        private String name;
 
         public Submarine()
         {
             subnarineId++;
+            name = "Submarine " + subnarineId;
         }
         public int Accelerate 
         {
@@ -47,7 +49,7 @@ namespace Toys
         }
         public override string ToString()
         {
-            return "Submarine " + subnarineId;
+            return name;
         }
     }
 }

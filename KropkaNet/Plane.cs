@@ -11,6 +11,7 @@ namespace Toys
         static int planId = 0;
         private int m_accelerate;
         private int m_rise;
+        String name;
         public int Accelerate
         {
             get
@@ -43,11 +44,12 @@ namespace Toys
         public Plane()
         {
             planId++;
+            name= "Plane " + planId;
         }
 
         public override string ToString()
         {
-            return "Plane "+planId;
+            return name;
         }
     }
 }
