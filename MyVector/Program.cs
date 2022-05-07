@@ -8,15 +8,18 @@ namespace MyVector
         {
             MyVector<string> vector = new MyVector<string>(2);
             vector[0] = "Hello";
-            Console.WriteLine(vector[0]);
-            vector.pushBack("Word");
+            vector.pushBack("Word\n");
+            vector[1]="Word";
             Console.WriteLine(vector[1]);
-            vector[1]="Hello";
-            Console.WriteLine(vector[1]);
-            for(int i = 0; i < 6; i++)
+            vector.dump();
+            try
             {
-                Console.WriteLine(vector[i]);
+                String v = vector[3];
             }
+            catch (IndexOutOfRangeException e) {
+                Console.WriteLine(e.Message);
+             }
+
             Console.ReadKey();
         }
     }

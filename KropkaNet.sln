@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31727.386
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toys", "KropkaNet\Toys.csproj", "{AF9CCDCB-519C-4628-B01E-986EB3326712}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyVector", "MyVector\MyVector.csproj", "{7E37D2B5-E98A-43C6-BB81-2BFF9699F2A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyVectorEvents", "MyVectorEvents\MyVectorEvents.csproj", "{4A0A1156-255E-4866-812D-48619DCA65A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7E37D2B5-E98A-43C6-BB81-2BFF9699F2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E37D2B5-E98A-43C6-BB81-2BFF9699F2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E37D2B5-E98A-43C6-BB81-2BFF9699F2A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A0A1156-255E-4866-812D-48619DCA65A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A0A1156-255E-4866-812D-48619DCA65A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A0A1156-255E-4866-812D-48619DCA65A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A0A1156-255E-4866-812D-48619DCA65A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

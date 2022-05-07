@@ -11,6 +11,10 @@ namespace MyVector
 {
     class MyVector<Type>
     {
+        public delegate void EventHandler(int size);
+        public EventHandler eventHandler;
+        public EventHandler eventHandler1;
+
         private Type[] m_myVector;
         public int Size//index ostatniego elementu
         {
@@ -22,26 +26,28 @@ namespace MyVector
         {
             get
             {
-                if (index >= Size || index <= -1 )
+                if (index >= Size || index <= -1)
                 {
                     throw new IndexOutOfRangeException("Wartosc o podanym indeksie jest nieosiagalna");
                 }
-               return m_myVector[index];
+                return m_myVector[index];
             }
-            set 
-            { 
-                if(index <= -1)
+            set
+            {
+                if (index <= -1)
                 {
                     throw new IndexOutOfRangeException("Wartosc o podanym indeksie jest nieosiagalna");
                 }
-                if(index >= m_myVector.Length)
+                if (index >= m_myVector.Length)
                 {
-                    allocate((index+1) * 2);
+                    allocate((index + 1) * 2);
+                    eventHandler1(m_myVector.Length);
                 }
                 m_myVector[index] = value;
-                if (index > Size)
+                if (index >= Size)
                 {
                     Size = index + 1;
+                    eventHandler(Size);
                 }
             }
         }
@@ -66,11 +72,21 @@ namespace MyVector
         {
             Console.WriteLine("Allocated memory: " + m_myVector.Length);
             Console.WriteLine("Last index: " + Size);
-            for(int i = 0; i < Size; i++)
+            for (int i = 0; i < Size; i++)
             {
                 Console.Write(m_myVector[i] + " ");
             }
             Console.WriteLine();
+        }
+
+        protected virtual void OnEventHandler(int size)
+        {
+            eventHandler?.Invoke(size);
+        }
+
+        protected virtual void OnEventHandler1(int size)
+        {
+            eventHandler1?.Invoke(size);
         }
     }
 }
